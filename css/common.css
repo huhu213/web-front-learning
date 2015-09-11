@@ -122,6 +122,7 @@ p{
     border-top: 1px solid #efefef;
     font-size: 15px;
     padding: 0;
+    z-index: 999;
 }
 /*二级菜单鼠标划过样式*/
 .nav-stacked>li+li{
@@ -129,7 +130,7 @@ p{
 }
 
 .menu-second li a:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
 /*二级菜单选中状态*/
 .menu-second-selected {
@@ -176,6 +177,8 @@ p{
 	font-size: 16px;
 	letter-spacing: 1px;
 	text-indent: 0px;
+	margin-top: -100px;
+	padding-top: 100px;
 }
 
 .tab-first li img{

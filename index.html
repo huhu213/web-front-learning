@@ -23,7 +23,7 @@
 			</div> 
 		</div>
 		<div class="container" id="container">
-			<div class="sidebar-menu" id="menu"></div>
+			<div class="sidebar-menu affix" id="menu"></div>
 			<div class="content" id="content">
 				<!-- Tab panes -->
 				  <div class="tab-content">
@@ -31,7 +31,7 @@
 				    	
 				    </div>
 				    <div role="tabpanel" class="tab-pane" id="tabTwo">
-				    	
+
 				    </div>
 				    <div role="tabpanel" class="tab-pane" id="tabThree">
 				    	
@@ -42,18 +42,21 @@
 		
 	</body>
 	
+		
+
+	
 	<script id="LevelOne" type="text/x-dot-template">
-		<ul class="nav nav-pills nav-stacked menu-first collapsed">
+		<ul class="nav nav-pills nav-stacked bs-docs-sidenav menu-first">
 			{{ for(var i = 0, y = it.data.length; i < y; i ++) { }}
 			<li>
 				<a href="#{{=(i+11)}}" data-toggle="collapse" data-parent="#menu" aria-expended="true" aria-controls="{{=(i+1)}}" id="{{=it.data[i].menuId}}"><i><img src="{{=it.data[i].thumbnail}}" /></i>{{=it.data[i].title}}</a>
-				<ul class="nav nav-pills nav-stacked menu-second collapse" id="{{=it.data[i].menuId+10}}" data-toggle="collapse">
+				<ul class="nav nav-pills nav-stacked menu-second collapse" id="{{=it.data[i].menuId+10}}" data-toggle="collapse" onclick="event.stopPropagation()">
 					{{ for(var j = 0, x = it.data[i].menu.length; j < x; j ++) { }}
 					<li>
-						<a href="#{{=((i+1)*100+j+1)}}"><i class="glyphicon glyphicon-flash"></i>{{=it.data[i].menu[j].title}}</a>
+						<a href="#{{=((i+1)*100)+j+1}}" class="menusec-a" id="{{=it.data[i].menuId+"sub"+j}}"><i class="glyphicon glyphicon-flash"></i>{{=it.data[i].menu[j].title}}</a>
 					</li>
 					{{ } }}			
-				</ul>
+				</ul>				
 			</li>
 			{{ } }}
 		</ul>
@@ -70,8 +73,7 @@
 		<ul class="tab-first">
 			{{ for(var t = 0, y = it.data.firList.length; t < y; t ++) { }}
 			<li>
-				<a id="{{=it.data.firList[t].id}}" name="{{=it.data.firList[t].id}}"></a>
-				<p class="tabFirP">{{=it.data.firList[t].title}}</p>
+				<p class="tabFirP" id="{{=it.data.firList[t].id}}" name="{{=it.data.firList[t].id}}">{{=it.data.firList[t].title}}</p>
 				{{~it.data.firList[t].img:value:index}}
 				<img src="{{=value}}" />
 				{{~}}
@@ -94,7 +96,7 @@
 	</script>
 	
 	<script src="js/doT.min.js"></script>		
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/common.js"></script>
 </html>

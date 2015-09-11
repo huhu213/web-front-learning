@@ -192,63 +192,97 @@ var menuData = [
 		}	
 ]
 
+var imgBasePath = "http://192.168.111.29:8020/HelpCenter/img/tabImg/";
 var tabData = [
 {
 	title: '个人中心',
 	intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-	img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+	img: [imgBasePath +"zone.png"],
 	firList: [{
 		id: 101,
 		title: '1.个人设置',
 		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-		img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+		img: [imgBasePath +"set.png"],
 		seclist: [{
 			title: '（1）个人设置',
 			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
-			img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png']
+			img: []
 		}]
 	},
 	{
 		id: 102,
 		title: '2.班级管理',
 		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-		img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+		img: [imgBasePath +"classManage1.png"],
 		seclist: [{
 			title: '（2）班级管理',
 			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
-			img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png']
+			img: [imgBasePath +"classManage2.png"]
+		}]
+	},
+	{
+		id: 103,
+		title: '3.应用模块定制',
+		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
+		img: [imgBasePath +"moduleDesign.png"],
+		seclist: [{
+			title: '（3）应用模块定制',
+			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
+			img: []
 		}]
 	}]
 },
 {
 	title: '资源',
 	intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-	img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+	img: [imgBasePath +"set.png"],
 	firList: [{
 		id: 201,
 		title: '1.资源',
 		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-		img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+		img: [imgBasePath +"moduleDesign.png"],
 		seclist: [{
 			title: '(1)资源',
 			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
-			img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png']
+			img: [imgBasePath +"moduleDesign.png"]
+		}]
+	},
+	{
+		id: 202,
+		title: '3.应用模块定制',
+		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
+		img: [imgBasePath +"moduleDesign.png"],
+		seclist: [{
+			title: '（3）应用模块定制',
+			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
+			img: []
 		}]
 	}]
 },
 {
 	title: '备授课',
 	intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-	img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+	img: [imgBasePath +"set.png"],
 	firList: [{
 		id: 301,
 		title: '1.备授课',
 		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
-		img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png','http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png'],
+		img: [imgBasePath +"set.png"],
 		seclist: [{
 			title: '(1)备授课',
 			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
-			img: ['http://192.168.111.29:8020/HelpCenter/img/tabImg/tab.png']
+			img: [imgBasePath +"moduleDesign.png"]
+		}]
+	},
+	{
+		id: 302,
+		title: '3.应用模块定制',
+		intro: '个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能',
+		img: [imgBasePath +"moduleDesign.png"],
+		seclist: [{
+			title: '（3）应用模块定制',
+			steps: ['个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能','个人空间提供了个人设置、班级管理、应用模块定制、浏览处理教学事务等功能'],
+			img: []
 		}]
 	}]
 }]
