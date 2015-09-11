@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet"/>	
+		
+		<script src="js/info.js"></script>
+	</head>
+	<body>	
+		<div class="header">
+			<div id="headnav">
+				<div class="logoBox" id="logoBox">
+				  	<img src="img/navLogo.png">
+				</div>
+				<ul class="nav nav-tabs headTab" role="tablist" id="headtab">
+				    <li role="presentation" class="active"><a href="#tabOne" aria-controls="tabOne" role="tab" data-toggle="tab"><img src="img/tabIcon.png"  />操作指南</a></li>
+				    <li role="presentation"><a href="#tabTwo" aria-controls="tabTwo" role="tab" data-toggle="tab"><img src="img/tabIcon.png"  />应用案例</a></li>
+				    <li role="presentation"><a href="#tabThree" aria-controls="tabThree" role="tab" data-toggle="tab"><img src="img/tabIcon.png"  />百问百答</a></li>
+				</ul>
+			</div> 
+		</div>
+		<div class="container" id="container">
+			<div class="sidebar-menu" id="menu"></div>
+			<div class="content" id="content">
+				<!-- Tab panes -->
+				  <div class="tab-content">
+				    <div role="tabpanel" class="tab-pane active" id="tabOne">
+				    	
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="tabTwo">
+				    	
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="tabThree">
+				    	
+				    </div>
+				  </div>
+			</div>
+		</div>
+		
+	</body>
+	
+	<script id="LevelOne" type="text/x-dot-template">
+		<ul class="nav nav-pills nav-stacked menu-first collapsed">
+			{{ for(var i = 0, y = it.data.length; i < y; i ++) { }}
+			<li>
+				<a href="#{{=(i+11)}}" data-toggle="collapse" data-parent="#menu" aria-expended="true" aria-controls="{{=(i+1)}}" id="{{=it.data[i].menuId}}"><i><img src="{{=it.data[i].thumbnail}}" /></i>{{=it.data[i].title}}</a>
+				<ul class="nav nav-pills nav-stacked menu-second collapse" id="{{=it.data[i].menuId+10}}" data-toggle="collapse">
+					{{ for(var j = 0, x = it.data[i].menu.length; j < x; j ++) { }}
+					<li>
+						<a href="#{{=((i+1)*100+j+1)}}"><i class="glyphicon glyphicon-flash"></i>{{=it.data[i].menu[j].title}}</a>
+					</li>
+					{{ } }}			
+				</ul>
+			</li>
+			{{ } }}
+		</ul>
+	</script>
+	
+	<script id="opManual" type="text/x-dot-template">
+		<div class="tabHead">
+    		<p id="tabTitle">{{=it.data.title}}</p>
+    		<p>{{=it.data.intro}}</p>
+    		{{~it.data.img:value:index}}
+				<img src="{{=value}}" />
+			{{~}}
+    	</div>
+		<ul class="tab-first">
+			{{ for(var t = 0, y = it.data.firList.length; t < y; t ++) { }}
+			<li>
+				<a id="{{=it.data.firList[t].id}}" name="{{=it.data.firList[t].id}}"></a>
+				<p class="tabFirP">{{=it.data.firList[t].title}}</p>
+				{{~it.data.firList[t].img:value:index}}
+				<img src="{{=value}}" />
+				{{~}}
+				<ul class="tab-second">
+					{{ for(var j = 0, x = it.data.firList[t].seclist.length; j < x; j ++) { }}
+						<li>
+							<p class="tabsecTitle">{{=it.data.firList[t].seclist[j].title}}</p>
+							{{~it.data.firList[t].seclist[j].steps:value:index}}
+								<p class="tabSecP"><img src="http://192.168.111.29:8020/HelpCenter/img/tabImg/tabsecList.png" class="listIcon" />{{=value}}</p>
+							{{~}}
+							{{~it.data.firList[t].seclist[j].img:value:index}}
+								<img src="{{=value}}" />
+							{{~}}
+						</li>
+					{{ } }}
+				</ul>
+			</li>
+			{{ } }}
+		</ul>
+	</script>
+	
+	<script src="js/doT.min.js"></script>		
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+</html>

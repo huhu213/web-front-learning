@@ -1,0 +1,207 @@
+*{
+	font-family: "微软雅黑";
+}
+
+ul{
+	margin: 0px 0px;
+	padding: 0px;
+} 
+
+p{
+	text-indent: 20px;
+}
+.container{
+	border: 1px solid #CCCCCC;
+	padding: 0px;
+	padding-top: 60px;
+}
+
+.header{
+	height: 60px;
+	background: #007DA8;
+	width: 100%;
+	position: fixed;
+}
+
+#headnav{
+	margin: auto;
+}
+
+.logoBox{
+	float: left;
+	height: 60px;
+	line-height: 60px;
+}
+
+.logoBox img{
+	vertical-align:middle;
+	padding-left: 10px;
+}
+
+.headTab{
+	height: 60px;
+	border: none;
+}
+
+.headTab li{
+	height: 100%;
+	padding: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	background: url(../img/tabSelected.png);
+	color: #FFFFFF;
+	border: none;
+}
+
+.headTab li a{
+	height: 100%;
+	padding-top: 20px;
+	width: 120px;
+	margin: 0px 30px ;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+
+.headTab li a:hover{
+	background-color: #5BC0DE;
+	color: #FFFFFF;
+	border: none;
+}
+
+.headTab li a img{
+	margin-right: 10px;
+}
+
+/*左侧菜单*/
+.sidebar-menu{
+	width: 200px;
+	float: left;
+    border-right: 1px solid #c4c8cb;
+    position: fixed;
+}
+/*一级菜单*/
+.menu-first{
+    line-height:45px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 14px;
+    font-weight: normal;
+}
+/*一级菜单鼠标划过状态*/
+.menu-first:hover{
+    text-decoration: none;
+    border-top: 1px solid #b7b7b7;
+    border-bottom: 1px solid #acacac;
+}
+/*一级菜单元素样式*/
+.menu-first li{
+    border-bottom: 1px solid #CCCCCC;
+    font-family: "微软雅黑";
+    font-size: 18px;
+}
+
+/*菜单icon*/
+.menu-first i{
+	margin: 10px 10px;
+	margin-left: 20px;
+}
+.menu-second i{
+	margin-left: 50px;
+}
+/*二级菜单*/
+.menu-second{
+	background: #FFFFFF;
+}
+
+.menu-second li a{
+    height:35px;
+    line-height:30px;
+    border-top: 1px solid #efefef;
+    font-size: 15px;
+    padding: 0;
+}
+/*二级菜单鼠标划过样式*/
+.nav-stacked>li+li{
+	margin-top: 0px;
+}
+
+.menu-second li a:hover {
+    text-decoration: none;
+}
+/*二级菜单选中状态*/
+.menu-second-selected {
+    background-color: #66c3ec;
+    height:31px;
+    line-height:31px;
+    border-top: 1px solid #83ceed;
+    border-bottom: 1px solid #83ceed;
+    border-right: 3px solid #f8881c;
+    border-left: 3px solid #66c3ec;
+    text-align:center;
+}
+
+/*tab位置样式*/
+.tabHead p{
+	font-family: "微软雅黑";
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+
+.tabHead #tabTitle{
+	height: 30px;
+	line-height: 30px;
+	margin: 20px 0px;
+	text-indent: 10px;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	letter-spacing: 2px;
+	background: url(../img/tabImg/tabtitle.png);
+	background-repeat: no-repeat;
+}
+
+.tabHead img{
+	margin: 10px 0px;
+}
+
+.tab-first li{
+	color: #269ABC;
+	font-family: "微软雅黑";
+}
+
+.tab-first li .tabFirP{
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-indent: 0px;
+}
+
+.tab-first li img{
+	margin: 10px 0px;
+}
+
+.tab-second{
+	list-style: disc;
+}
+
+.tab-second li p{
+	color: #000000;
+	font-size: 16px;
+}
+
+.tab-second li .tabsecTitle{
+	color: #007DA8;
+	text-indent: 0px;
+}
+
+.tab-second li img{
+	margin: 10px 0px;
+}
+
+.tab-second li .listIcon{
+	margin: 0px 10px;
+}
+
+
