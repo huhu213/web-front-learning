@@ -1,22 +1,29 @@
 var menuObj = {
-	data: menuData
-};
+	menu: menuData
+}
 var tabOneObj = {
 	data: tabData[0]
 }
+var tabTwoObj = {
+	data: caseData
+}
 
-
-var tmpOne = doT.template($("#LevelOne").text());
+var tmpOne = doT.template($("#levelOne").text());
 $("#menu").html(tmpOne(menuObj));
 
 var tmpTwo = doT.template($("#opManual").text());
+$("#opOne").html(tmpTwo(tabOneObj));
+
+var tmpThree = doT.template($("#appCase").text());
+$("#tabTwo").html(tmpThree(tabTwoObj));
 
 var firstmenu = $(".menu-first>li>a");
-$("#tabOne").html(tmpTwo(tabOneObj));
+
 firstmenu.each(function(i){
 	firstmenu.eq(i).click(function(){
 		tabOneObj.data = tabData[i];
-		$("#tabOne").html(tmpTwo(tabOneObj));
+		$("#opOne").html(tmpTwo(tabOneObj));
+        
 		
 		var secondmenu = $(".menu-second");
 		secondmenu.each(function(j){
@@ -30,17 +37,6 @@ firstmenu.each(function(i){
 	})
 });
 
-/*原生js实现动态生成的a标签锚点*/
-//var menusecTagA = document.getElementsByClassName("menusec-a");
-//for (var s = 0; s < menusecTagA.length; s ++) {
-//	var target = "";
-//	var tagId = menusecTagA[s].id;
-//	target = tagId.substr(0,1)*10 + tagId.substr(4);
-//	menusecTagA[s].onclick(function(){
-//		document.getElementsById(target).scrollIntoView();
-//	})
-//}
-
 
 
 $().ready(function(){
@@ -49,16 +45,15 @@ $().ready(function(){
 	var sidebarWidth = $("#menu").width();
 	$("#headnav").css("width", conWidth);
 	$("#headtab").css("margin-left", 2*left);
-	$("#content").css({
-		"width": conWidth-sidebarWidth-60,
-		"margin-left": sidebarWidth+60
+	$("#content").css("width", conWidth);
+	$(".opManualContent").css({
+		"padding-left": sidebarWidth+60
 	});
 	$("#tabTitle").css("width", conWidth);
-	$("#11").addClass("in");	
+	$("#11").addClass("in");
 	
-	$("#1sub0").click(function(){
-		
-	})
+	$(".subTab").css("width", conWidth);
+	
 })
 
 

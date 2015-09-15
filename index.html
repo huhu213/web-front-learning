@@ -16,54 +16,49 @@
 				  	<img src="img/navLogo.png">
 				</div>
 				<ul class="nav nav-tabs headTab" role="tablist" id="headtab">
-				    <li role="presentation" class="active"><a href="#tabOne" aria-controls="tabOne" role="tab" data-toggle="tab"><img src="img/tabIcon.png"  />操作指南</a></li>
-				    <li role="presentation"><a href="#tabTwo" aria-controls="tabTwo" role="tab" data-toggle="tab"><img src="img/tabIcon.png"  />应用案例</a></li>
-				    <li role="presentation"><a href="#tabThree" aria-controls="tabThree" role="tab" data-toggle="tab"><img src="img/tabIcon.png"  />百问百答</a></li>
+				    <li role="presentation" class="active"><a href="#tabOne" aria-controls="tabOne" role="tab" data-toggle="tab"><b class="glyphicon glyphicon-stop"></b>操作指南</a></li>
+				    <li role="presentation"><a href="#tabTwo" aria-controls="tabTwo" role="tab" data-toggle="tab"><b class="glyphicon glyphicon-stop"></b>应用案例</a></li>
+				    <li role="presentation"><a href="#tabThree" aria-controls="tabThree" role="tab" data-toggle="tab"><b class="glyphicon glyphicon-stop"></b>百问百答</a></li>
 				</ul>
-			</div> 
+			</div>
 		</div>
 		<div class="container" id="container">
-			<div class="sidebar-menu affix" id="menu"></div>
 			<div class="content" id="content">
-				<!-- Tab panes -->
 				  <div class="tab-content">
 				    <div role="tabpanel" class="tab-pane active" id="tabOne">
+				    	<div class="subTab">
+				    		<ul class="nav nav-tabs opTabList" role="tablist" id="opTabList">
+							    <li role="presentation" class="active"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">操作手册</a></li>
+							    <li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">操作视频</a></li>
+							</ul>
+				    	</div>
+				    	
+				    	<div class="tab-content opTab">	
+				    		<div role="tabpanel" class="tab-pane active" id="manual">
+				    			<div class="contentBox">
+						    		<div class="sidebar-menu affix" id="menu"></div>
+						    		<div class="opManualContent" id="opOne"></div>
+					    		</div>
+				    		</div>
+				    		<div role="tabpanel" class="tab-pane" id="video">
+				    			<div class="test">asd</div>
+				    		</div>
+				    	</div>
 				    	
 				    </div>
 				    <div role="tabpanel" class="tab-pane" id="tabTwo">
-
+				    	
 				    </div>
 				    <div role="tabpanel" class="tab-pane" id="tabThree">
 				    	
 				    </div>
 				  </div>
 			</div>
-		</div>
-		
+		</div>	
 	</body>
 	
-		
-
-	
-	<script id="LevelOne" type="text/x-dot-template">
-		<ul class="nav nav-pills nav-stacked bs-docs-sidenav menu-first">
-			{{ for(var i = 0, y = it.data.length; i < y; i ++) { }}
-			<li>
-				<a href="#{{=(i+11)}}" data-toggle="collapse" data-parent="#menu" aria-expended="true" aria-controls="{{=(i+1)}}" id="{{=it.data[i].menuId}}"><i><img src="{{=it.data[i].thumbnail}}" /></i>{{=it.data[i].title}}</a>
-				<ul class="nav nav-pills nav-stacked menu-second collapse" id="{{=it.data[i].menuId+10}}" data-toggle="collapse" onclick="event.stopPropagation()">
-					{{ for(var j = 0, x = it.data[i].menu.length; j < x; j ++) { }}
-					<li>
-						<a href="#{{=((i+1)*100)+j+1}}" class="menusec-a" id="{{=it.data[i].menuId+"sub"+j}}"><i class="glyphicon glyphicon-flash"></i>{{=it.data[i].menu[j].title}}</a>
-					</li>
-					{{ } }}			
-				</ul>				
-			</li>
-			{{ } }}
-		</ul>
-	</script>
-	
-	<script id="opManual" type="text/x-dot-template">
-		<div class="tabHead">
+	<script id="opManual" type="text/x-dot-template">		  	
+  		<div class="tabHead">
     		<p id="tabTitle">{{=it.data.title}}</p>
     		<p>{{=it.data.intro}}</p>
     		{{~it.data.img:value:index}}
@@ -73,26 +68,62 @@
 		<ul class="tab-first">
 			{{ for(var t = 0, y = it.data.firList.length; t < y; t ++) { }}
 			<li>
-				<p class="tabFirP" id="{{=it.data.firList[t].id}}" name="{{=it.data.firList[t].id}}">{{=it.data.firList[t].title}}</p>
+			<p class="tabFirP" id="{{=it.data.firList[t].id}}" name="{{=it.data.firList[t].id}}"><i><img src="img/tabImg/dot.png" /></i>{{=it.data.firList[t].title}}</p>
 				{{~it.data.firList[t].img:value:index}}
 				<img src="{{=value}}" />
 				{{~}}
 				<ul class="tab-second">
-					{{ for(var j = 0, x = it.data.firList[t].seclist.length; j < x; j ++) { }}
+					{{ for(var s = 0, w = it.data.firList[t].seclist.length; s < w; s ++) { }}
 						<li>
-							<p class="tabsecTitle">{{=it.data.firList[t].seclist[j].title}}</p>
-							{{~it.data.firList[t].seclist[j].steps:value:index}}
-								<p class="tabSecP"><img src="http://192.168.111.29:8020/HelpCenter/img/tabImg/tabsecList.png" class="listIcon" />{{=value}}</p>
-							{{~}}
-							{{~it.data.firList[t].seclist[j].img:value:index}}
-								<img src="{{=value}}" />
-							{{~}}
+							<p class="tabsecTitle">{{=it.data.firList[t].seclist[s].title}}</p>
+							<ul class="tab-second tab-third">
+								{{ for(var r = 0, q = it.data.firList[t].seclist[s].steps.length; r < q; r ++) { }}
+									<li>
+										<p class="tabSecP">
+											<img src="http://192.168.111.29:8020/HelpCenter/img/tabImg/tabsecList.png" class="listIcon" />
+											{{=it.data.firList[t].seclist[s].steps[r].intro}}
+										</p>
+										{{~it.data.firList[t].seclist[s].steps[r].img:image:index}}
+											<img src="{{=image}}"
+										{{~}}
+									</li>	
+								{{ } }}
+							</ul>
 						</li>
 					{{ } }}
 				</ul>
 			</li>
 			{{ } }}
+		</ul>	  		
+	</script>
+	
+	<script id="levelOne" type="x-dot-template">
+		<ul class="nav nav-pills nav-stacked bs-docs-sidenav menu-first">
+			{{ for(var i = 0, y = it.menu.length; i < y; i ++) { }}
+			<li>
+				<a href="#{{=(i+11)}}" data-toggle="collapse" data-parent="#menu" aria-expended="true" aria-controls="{{=(i+1)}}" id="{{=it.menu[i].menuId}}"><i><img src="{{=it.menu[i].thumbnail}}" /></i>{{=it.menu[i].title}}</a>
+				<ul class="nav nav-pills nav-stacked menu-second collapse" id="{{=it.menu[i].menuId+10}}" data-toggle="collapse" onclick="event.stopPropagation()">
+					{{ for(var j = 0, x = it.menu[i].menu.length; j < x; j ++) { }}
+					<li>
+						<a href="#{{=((i+1)*100)+j+1}}" class="menusec-a" id="{{=it.menu[i].menuId+"sub"+j}}"><i><img src="img/sidebarIcon/dot.png" /></i>{{=it.menu[i].menu[j].title}}</a>
+					</li>
+					{{ } }}			
+				</ul>				
+			</li>
+			{{ } }}
 		</ul>
+	</script>
+	
+	<script id="appCase" type="x-dot-template">
+		<div class="row">
+			{{ for(var i = 0, l = it.data.length; i < l; i ++) { }}
+    		<div class="col-md-6 col-sm-6 caseBox">
+    			<p class="caseTitle">{{=it.data[i].title}}</p>
+    			<img src="{{=it.data[i].thumbnail}}"  />
+    			<p class="caseInfo">{{=it.data[i].info}}</p>
+    		</div>
+    		{{ } }}
+    	</div>
 	</script>
 	
 	<script src="js/doT.min.js"></script>		
