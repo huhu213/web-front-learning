@@ -23,6 +23,7 @@ p{
 	position: fixed;
 	top: 0px;
 	left: 0px;
+	z-index: 500;
 }
 
 #headnav{
@@ -270,6 +271,7 @@ p{
 
 .tab-second li{
 	margin: 15px 0px;
+	margin-bottom: 0px;
 }
 
 .tab-second li .tabsecTitle{
@@ -287,6 +289,10 @@ p{
 	margin: 0px 10px;
 }
 
+.tab-second a{
+	padding-left: 80px;
+}
+
 .subTab{
 	height: 80px;
 	background: #FFFFFF;
@@ -297,6 +303,47 @@ p{
 }
 
 /*应用案例*/
-.caseBox{
-	border: 1px solid #EEEEEE;
+.row{
+	margin: 10px 20px;
+}
+.caseContent{
+	height: 200px;
+	margin: 10px 20px;
+	border: 1px solid #CCCCCC;
+	box-shadow: 5px 5px 5px #BBBBBB;
+	padding: 10px 10px;
+}
+
+.imgBox{
+	float: left;
+	margin: 10px 10px;
+}
+.caseContent .caseTitle{
+	font-size: 16px;
+	color: #396898;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.textBox a{
+	color: #777777;
+}
+
+.textBox a:hover{
+	color: #0072A7;
+}
+
+.caseContent .caseInfo{
+	margin-bottom: 20px;
+}
+
+.textBox a{
+	float: right;
+	margin-top: -20px;
+	margin-right: 10px;
+}
+
+.videoContent{
+	width: 882px;
+	height: 496px;
 }

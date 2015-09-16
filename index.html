@@ -41,7 +41,8 @@
 					    		</div>
 				    		</div>
 				    		<div role="tabpanel" class="tab-pane" id="video">
-				    			<div class="test">asd</div>
+				    			<div class="sidebar-menu affix" id="videoMenu"></div>
+					    		<div class="opManualContent" id="opTwo"></div>
 				    		</div>
 				    	</div>
 				    	
@@ -86,6 +87,7 @@
 										{{~it.data.firList[t].seclist[s].steps[r].img:image:index}}
 											<img src="{{=image}}"
 										{{~}}
+										<a href="#">{{=it.data.firList[t].seclist[s].steps[r].cases}}</a>
 									</li>	
 								{{ } }}
 							</ul>
@@ -98,7 +100,7 @@
 	</script>
 	
 	<script id="levelOne" type="x-dot-template">
-		<ul class="nav nav-pills nav-stacked bs-docs-sidenav menu-first">
+		<ul class="nav nav-pills nav-stacked bs-docs-sidenav menu-first" id="menu-first">
 			{{ for(var i = 0, y = it.menu.length; i < y; i ++) { }}
 			<li>
 				<a href="#{{=(i+11)}}" data-toggle="collapse" data-parent="#menu" aria-expended="true" aria-controls="{{=(i+1)}}" id="{{=it.menu[i].menuId}}"><i><img src="{{=it.menu[i].thumbnail}}" /></i>{{=it.menu[i].title}}</a>
@@ -114,13 +116,47 @@
 		</ul>
 	</script>
 	
+	<script id="levelTwo" type="x-dot-template">
+		<ul class="nav nav-pills nav-stacked bs-docs-sidenav menu-first videomenufirst" id="#videomenufirst">
+			{{ for(var i = 0, y = it.menu.length; i < y; i ++) { }}
+			<li>
+				<a href="#{{=(i+31)}}" data-toggle="collapse" data-parent="#videoMenu" aria-expended="true" aria-controls="{{=(i+21)}}" id="{{=it.menu[i].menuId+20}}"><i><img src="{{=it.menu[i].thumbnail}}" /></i>{{=it.menu[i].title}}</a>
+				<ul class="nav nav-pills nav-stacked menu-second videomenusecond collapse" id="{{=it.menu[i].menuId+30}}" data-toggle="collapse" onclick="event.stopPropagation()">
+					{{ for(var j = 0, x = it.menu[i].subtitle.length; j < x; j ++) { }}
+					<li>
+						<a href="#" class="menusec-a" id="{{=it.menu[i].menuId+40+(j+1)*10}}"><i><img src="img/sidebarIcon/dot.png" /></i>{{=it.menu[i].subtitle[j].title}}</a>
+					</li>
+					{{ } }}			
+				</ul>				
+			</li>
+			{{ } }}
+		</ul>
+	</script>
+	
+		
+	<script id="opVideo" type="x-dot-template">
+		<div class="tabHead">
+    		<p id="tabTitle">{{=it.data.title}}</p>
+    	</div>
+		<div class="videoContentBox">
+			<video controls src="{{=it.data.path}}" class="videoContent"/>	
+		</div>
+	</script>
+	
 	<script id="appCase" type="x-dot-template">
 		<div class="row">
 			{{ for(var i = 0, l = it.data.length; i < l; i ++) { }}
     		<div class="col-md-6 col-sm-6 caseBox">
-    			<p class="caseTitle">{{=it.data[i].title}}</p>
-    			<img src="{{=it.data[i].thumbnail}}"  />
-    			<p class="caseInfo">{{=it.data[i].info}}</p>
+    			<div class="caseContent" id="caseContent">
+    				<div class="imgBox">
+    					<img src="{{=it.data[i].img}}"  />
+    				</div>
+    				<div class="textBox">
+    					<p class="caseTitle">{{=it.data[i].title}}</p>
+	    				<p class="caseInfo">{{=it.data[i].info}}</p>
+	    				<a href="{{=it.data[i].caseUrl}}" target="_blank" class="viewMore">点击更多</a>
+    				</div>		
+    			</div>
     		</div>
     		{{ } }}
     	</div>
