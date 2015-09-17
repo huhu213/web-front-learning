@@ -88,6 +88,49 @@ videomenu.each(function(i){
 
 
 $().ready(function(){
+//	选项卡刷新
+	var hash = location.hash;
+	var headTabs = $(".headTab li a");
+	var tabs = $(".headTab li");
+	if(hash == '#One'){
+		tabs.removeClass("active");
+		$(".tab-pane").removeClass("active");
+		headTabs.css("color", "#C1F0FF");
+		headTabs.eq(0).css("color", "#FFFFFF");
+		tabs.eq(0).addClass("active");
+		$("#tabOne").addClass("active");
+		$("#manual").addClass("active");
+	}
+	else if(hash == "#Two"){
+		$(".tab-pane").removeClass("active");
+		headTabs.css("color", "#C1F0FF");
+		headTabs.eq(1).css("color", "#FFFFFF");
+		tabs.removeClass("active");
+		tabs.eq(1).addClass("active");
+		$("#tabTwo").addClass("active");
+	}
+	else if(hash == "#Three"){
+		$(".tab-pane").removeClass("active");
+		headTabs.css("color", "#C1F0FF");
+		headTabs.eq(2).css("color", "#FFFFFF");
+		tabs.removeClass("active");
+		tabs.eq(3).addClass("active");
+		$("#tabThree").addClass("active");
+	}
+	
+	headTabs.each(function(i){
+		headTabs.eq(i).click(function(){
+			headTabs.css({
+				"color": "#C1F0FF",
+				"background": "#007DA8"
+			});
+			headTabs.eq(i).css("color", "#FFFFFF");
+		})
+	})
+	
+	
+	var bodyheight = window.screen.height;
+	$("body").css("height", bodyheight+100);
 	var  conWidth = $("#container").width();
 	var left = $("#logoBox").width();
 	var sidebarWidth = $("#menu").width();
@@ -107,11 +150,20 @@ $().ready(function(){
 	$(".caseContent").each(function(i){
 		$(".caseContent").eq(i).mouseover(function(){
 			$(".viewMore").eq(i).css("color", "#0072A7");
+			$(".caseContent").eq(i).addClass("caseContentShadow");
 		})
 		$(".caseContent").eq(i).mouseleave(function(){
 			$(".viewMore").eq(i).css("color", "#777777");
+			$(".caseContent").eq(i).removeClass("caseContentShadow");
 		})
 	})
+	
+	$(".menusec-a").each(function(i){
+		$(".menusec-a").eq(i).click(function(){
+			$(".menusec-a").removeClass("menu-second-selected");
+			$(".menusec-a").eq(i).toggleClass("menu-second-selected");
+		})
+	})	
 	
 })
 

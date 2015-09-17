@@ -10,8 +10,11 @@ ul{
 p{
 	text-indent: 20px;
 }
+
+/*body{
+	min-height: 1200px;
+}*/
 .container{
-	border-right: 1px solid #CCCCCC;
 	padding: 0px;
 	padding-top: 60px;
 }
@@ -57,7 +60,7 @@ p{
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-	background: url(../img/tabSelected.png);
+	background: #007DA8;
 	color: #FFFFFF;
 	border: none;
 }
@@ -73,7 +76,7 @@ p{
 }
 
 .headTab li a:hover{
-	background-color: #5BC0DE;
+	background-color: #006688;
 	color: #FFFFFF;
 	border: none;
 }
@@ -84,6 +87,7 @@ p{
 
 .opTab{
 	padding-top: 80px;
+	border-right: 1px solid #CCCCCC;
 }
 
 .opTabList{
@@ -114,7 +118,10 @@ p{
 	color: #666666;
 	font-size: 15px;
 	margin: 0px 0px;
+	padding-bottom: 8px;
+	padding-top: 8px;
 }
+
 
 .opTabList li a:active{
 	color: #FFFFFF;
@@ -146,6 +153,7 @@ p{
 
 .menu-first li a{
 	padding: 0px 15px;
+	padding-left: 5px;
 	color: #666666;
 }
 
@@ -160,7 +168,7 @@ p{
 	margin-left: 20px;
 }
 .menu-second i{
-	margin-left: 50px;
+	margin-left: 40px;
 }
 /*二级菜单*/
 .menu-second{
@@ -188,17 +196,17 @@ p{
 .menu-second li a:hover {
     text-decoration: none;
 }
-/*二级菜单选中状态*/
+
 .menu-second-selected {
-    background-color: #66c3ec;
-    height:31px;
-    line-height:31px;
-    border-top: 1px solid #83ceed;
-    border-bottom: 1px solid #83ceed;
-    border-right: 3px solid #f8881c;
-    border-left: 3px solid #66c3ec;
-    text-align:center;
+	background: #E2E4E4;
+	border: none;
+	text-decoration: none;
+	padding: 0 0;
+	margin: 0 0;
 }
+
+
+/*二级菜单选中状态*/
 
 /*tab位置样式*/
 .opManualContent{
@@ -297,7 +305,6 @@ p{
 	height: 80px;
 	background: #FFFFFF;
 	position: fixed;
-	width: 100%;
 	border-bottom: 1px solid #DDDDDD;
 	border-right: 1px solid #FFFFFF;
 }
@@ -310,8 +317,13 @@ p{
 	height: 200px;
 	margin: 10px 20px;
 	border: 1px solid #CCCCCC;
-	box-shadow: 5px 5px 5px #BBBBBB;
 	padding: 10px 10px;
+}
+
+.caseContentShadow{
+	box-shadow: 0px 0px 5px 2px #BBBBBB;
+	-webkit-box-shadow: 0px 0px 5px 2px #BBBBBB;
+	-moz-box-shadow: 0px 0px 5px 2px #BBBBBB;
 }
 
 .imgBox{
@@ -347,3 +359,48 @@ p{
 	width: 882px;
 	height: 496px;
 }
+
+/*滚动条*/  
+* { 
+    scrollbar-face-color: #353535; 
+    scrollbar-shadow-color: #565656; 
+    scrollbar-highlight-color: #565656; 
+    scrollbar-3dlight-color: #7F7F7F; 
+    scrollbar-darkshadow-color: #565656; 
+    scrollbar-track-color: #565656; 
+    scrollbar-arrow-color: #DADADA; 
+}
+ /*滚动条整体*/  
+::-webkit-scrollbar{  
+    width:10px; /*滚动条宽度*/
+}  
+/*滚动条按钮*/  
+::-webkit-scrollbar-button {  
+  
+}  
+::-webkit-scrollbar-track{  
+    background-color:#F3F3F3;  /*滑道全部*/  
+}  
+::-webkit-scrollbar-track-piece{  
+    background-color:#DFF3FA;  /*滑道*/  
+    -webkit-border-radius:4px; /*滑道圆角宽度*/  
+}  
+::-webkit-scrollbar-thumb{  
+    background-color:#97C2E1; /*滑动条表面*/  
+    border:solid 1px #C0C0C0; /*滑动条边框*/  
+    border-radius:4px;  /*滑动条圆角宽度*/  
+}  
+/*横竖滚动条交角*/  
+::-webkit-scrollbar-corner {  
+    background-color: #F3F3F3;  
+}  
+/*横竖滚动条交角图案*/  
+::-webkit-resizer {  
+   background-repeat: no-repeat;  
+   background-position: bottom right;  
+}  
+       /*鼠标滑过滑动条*/  
+::-webkit-scrollbar-thumb:hover{  
+    background-color:#F3F3E0;  
+}
+
