@@ -100,6 +100,7 @@ $().ready(function(){
 		tabs.eq(0).addClass("active");
 		$("#tabOne").addClass("active");
 		$("#manual").addClass("active");
+
 	}
 	else if(hash == "#Two"){
 		$(".tab-pane").removeClass("active");
